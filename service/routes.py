@@ -19,7 +19,6 @@ def health():
     """Health Status"""
     return jsonify(dict(status="OK")), status.HTTP_200_OK
 
-
 ######################################################################
 # GET INDEX
 ######################################################################
@@ -34,8 +33,6 @@ def index():
         ),
         status.HTTP_200_OK,
     )
-
-
 
 ######################################################################
 # CREATE A NEW ACCOUNT
@@ -90,7 +87,6 @@ def get_accounts(account_id):
         abort(status.HTTP_404_NOT_FOUND, f"Account with id [{account_id}] could not be found.")
     return account.serialize(), status.HTTP_200_OK
 
-
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
@@ -125,11 +121,9 @@ def delete_accounts(account_id):
         account.delete()
     return "", status.HTTP_204_NO_CONTENT
 
-
 ######################################################################
 #  U T I L I T Y   F U N C T I O N S
 ######################################################################
-
 
 def check_content_type(media_type):
     """Checks that the media type is correct"""
